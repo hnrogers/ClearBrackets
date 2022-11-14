@@ -5,11 +5,13 @@ namespace ClearBrackets
 {
     class Working
     {
+        private int openingBrackets, closingBrackets;
         public bool CheckBrackets(string b)
         {
-            int i = b.Where(bracket => (bracket == '(')).Count();
-            
-            return true;
+            openingBrackets = b.Where(bracket => (bracket == '(')).Count();
+            closingBrackets = b.Where(bracket => (bracket == ')')).Count();
+
+            return openingBrackets == closingBrackets;
         }
     }
 }
